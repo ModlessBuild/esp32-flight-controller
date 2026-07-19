@@ -4,8 +4,6 @@ A custom ESP32-based avionics board that functions as either a drone flight
 controller or a rocket flight computer, selected by a boot-time firmware
 flag. Shared sensor fusion and logging stack; separate control law per mode.
 
-Built as a first-year Electrical Engineering student project at University
-College Dublin, targeting UCD UAV, FormulaUCD, and EuRocketry Ireland.
 
 ## Why this project
 
@@ -39,7 +37,7 @@ Full pin map and power architecture in [`docs/`](docs/).
 | Stage | Status |
 |---|---|
 | 1 — Sensor bring-up (I2C, clean readings) | ✅ Done |
-| 2 — EKF sensor fusion (attitude + altitude) | 🔄 In progress |
+| 2 — EKF sensor fusion (attitude + altitude) | ✅ Done |
 | 3 — PID control loop validation | ✅ Done |
 | 4 — Single motor / ESC bench test | ⏳ Pending hardware |
 | 5 — RC + motor mixing, full bench test | ⏳ Pending hardware |
