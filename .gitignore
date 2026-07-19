@@ -1,0 +1,26 @@
+# PlatformIO
+.pio/
+.pioenvs/
+.piolibdeps/
+
+# Arduino IDE
+*.ino.cpp
+
+# Build artifacts
+*.bin
+*.elf
+*.hex
+*.map
+
+# Editor/OS
+.vscode/
+.DS_Store
+Thumbs.db
+
+# Logs (raw flight data — keep out of repo unless curated)
+*.csv
+!docs/sample-logs/*.csv
+
+# Secrets / local config
+secrets.h
+*.local
