@@ -11,7 +11,7 @@ struct AltitudeController {
 void altitudeInit(AltitudeController &alt, float baseThrottle);
 
 float altitudeCompute(AltitudeController &alt,
-                      float altSetpoint, float altMeasurement, float dt);
+                      float altSetpoint, float altMeasAurement, float dt);
 
 void altitudeReset(AltitudeController &alt);
 

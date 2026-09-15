@@ -16,5 +16,6 @@ bool initLoRa() {
 void sendTelemetry(TelemetryPacket pkt) {
   LoRa.beginPacket();
   LoRa.write((uint8_t*)&pkt, sizeof(pkt));
-  LoRa.endPacket();
+  LoRa.endPacket(true);   // async=true: returns immediately, TX continues in background
+
 }

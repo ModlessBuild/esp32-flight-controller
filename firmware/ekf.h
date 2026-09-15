@@ -1,3 +1,5 @@
+// ekf.h
+
 #ifndef EKF_H
 #define EKF_H
 
@@ -8,18 +10,21 @@
 
 #define MPU6500_ADDR 0x68
 #define BMP280_ADDR  0x77
+#define QMC_ADDR     0x2C
 
 #define BARO_UPDATE_PERIOD_MS 50   // 20 Hz baro correction rate
+#define MAG_UPDATE_PERIOD_MS  50   // 20 Hz mag correction rate
 
 struct EKFState {
   float roll, pitch, yaw;   // filtered attitude, radians
   float alt, vz;            // altitude (m AGL), vertical velocity (m/s)
   float gx, gy, gz;         // bias-corrected gyro rates, rad/s
   float dt;                 // time step used for this update
+  float magHeading;          // tilt-compensated mag heading, radians
 };
 
-bool initEKF();             // init sensors, run calibration, returns false on hardware failure
-void updateEKF();           // run one EKF cycle: IMU read, attitude predict+correct, altitude predict, baro correct at 20Hz
-EKFState getEKFState();     // get latest state snapshot
+bool initEKF();
+void updateEKF();
+EKFState getEKFState();
 
 #endif
